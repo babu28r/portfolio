@@ -545,7 +545,7 @@ header.sticky{
 	}
 }
 
-@media (max-width: 970px){
+@media (max-width: 768px){
 	#menu-icon{
 		display: block;
 	}
@@ -557,7 +557,7 @@ header.sticky{
 		top: -600px;
 		left: 0;
 		right: 0;
-		flex-direction: column;
+		flex-direction: row;
 		background: var(--main-color);
 		text-align: right;
 		transition: all .40s;
@@ -577,7 +577,7 @@ header.sticky{
 		display: none;
 	}
 	.navlist.active{
-		top: 100%;
+		display: flex;
 	}
 }
 
