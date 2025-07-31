@@ -455,7 +455,7 @@ header.sticky{
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    background-image: url(/Images/intro.png);
+    background-image: url(Images/intro.png);
     background-size: cover;
 }
 .center h3{
