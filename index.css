@@ -549,44 +549,45 @@ header.sticky{
 	#menu-icon {
 		display: block;
 	}
-
+	.home {
+		min-height: 80vh;
+	}
 	.navlist {
 		position: absolute;
-		top: -1000px; 
+		top: -600px;
 		left: 0;
 		right: 0;
-		flex-direction: row; 
-		justify-content: center; 
+		flex-direction: row;
+		overflow-x: auto;             
+		white-space: nowrap;          
 		background: var(--main-color);
-		transition: top 0.4s ease;
-		z-index: 999;
+		text-align: right;
+		transition: all .40s;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
 	}
-
+	.navlist::-webkit-scrollbar {
+		display: none;               
+	}
 	.navlist a {
-		display: inline-block;
-		padding: 1.2rem 1.5rem;
+		display: inline-block;     
+		padding: 1.2rem;
+		margin: 1.5rem;
 		border-right: 2px solid var(--bg-color);
 		color: var(--bg-color);
-		text-align: center;
 	}
-
-	.navlist a:last-child {
-		border-right: none; /* Remove last border */
-	}
-
 	.navlist a:hover {
 		background: var(--bg-color);
 		color: var(--main-color);
 	}
-
 	.navlist a::after {
 		display: none;
 	}
-
 	.navlist.active {
-		top: 100%; 
+		top: 100%;
 	}
 }
+
 
 
 @media (max-width: 800px){
