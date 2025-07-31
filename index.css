@@ -15,7 +15,7 @@
     --big-font:5rem;
     --h2-font:3rem;
     --p-font:1.1rem;
-    --bg:url("/background.jpg");
+    --bg:url("Images/background.jpg");
     --hover:#ffffff;
 }
 .dark-theme{
