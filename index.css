@@ -577,7 +577,7 @@ header.sticky{
 		display: none;
 	}
 	.navlist.active{
-		display: flex;
+		top:100%;
 	}
 }
 
