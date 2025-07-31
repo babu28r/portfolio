@@ -554,13 +554,15 @@ header.sticky{
 	}
 	.navlist{
 		position: absolute;
-		top: -600px;
+		top: -1000px;
 		left: 0;
 		right: 0;
 		flex-direction: row;
+		justiy-content:center;
 		background: var(--main-color);
 		text-align: right;
 		transition: all .40s;
+		z-index:999;
 	}
 	.navlist a{
 		display: block;
