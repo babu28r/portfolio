@@ -661,3 +661,30 @@ header.sticky{
 		width: 310px;
 	}
 }
+@media (max-width: 600px) {
+  .contact .action form {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .contact .action form input[type="text"],
+  .contact .action form input[type="email"],
+  .contact .action form input[name="subject"],
+  .contact .action form input[type="submit"] {
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+
+  .contact .action form input[type="submit"] {
+    width: auto;
+    padding: 12px 30px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .contact .action {
+    width: 100%;
+  }
+}
