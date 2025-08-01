@@ -487,27 +487,44 @@ header.sticky{
 	line-height: 26px;
 	margin-bottom: 25px;
 }
-.contact .action form input[type="email"] {
-	max-width: 100%;
-	width: 470px;
-	padding: 12px 15px;
-	background: var(--bg-color);
-	color: var(--text-color);
-	border: none;
-	outline: none;
-	margin: 0 10px 20px 0;
-	border-radius: 30px;
+.contact .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.contact .action form input[type="submit"] {
-	padding: 12px 40px;
-	background: var(--main-color);
-	color: var(--bg-color);
-	border: none;
-	outline: none;
-	margin: 0 10px 20px 0;
-	border-radius: 30px;
-	cursor: pointer;
+
+.contact .action input[type="text"],
+.contact .action input[type="email"],
+.contact .action input[name="subject"] {
+  max-width: 100%;
+  width: 470px;
+  padding: 12px 15px;
+  background: var(--bg-color);   /* Define this in your root, or replace with a color like #fff */
+  color: var(--text-color);      /* Define this in your root, or replace with a color like #000 */
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  box-sizing: border-box;
 }
+
+.contact .action input[name="subject"] {
+  padding: 20px 15px;  /* Make subject input taller */
+}
+
+.contact .action input[type="submit"] {
+  padding: 12px 40px;
+  background: var(--main-color);  /* Also define this or use a color like #6c63ff */
+  color: var(--bg-color);
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+
+
 .ends{
 	text-align: center;
 	padding: 40px;

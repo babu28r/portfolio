@@ -12,9 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&family=Montserrat:ital,wght@1,300&family=Poppins:ital,wght@0,100;1,200&display=swap" rel="stylesheet">
     <title>Personal Portfolio</title>
-   
-    <base href="/Portfolio/">
-  
 </head>
 <body>
     <!-- <div id="progress">
@@ -30,7 +27,8 @@
             <li><a href="#service">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="/Portfolio/docs/babu_resume.pdf" download class="top-btn">Download CV</a>
+        <a href="./docs/babu_resume.pdf" download class="top-btn">Download CV</a>
+
         <img src="Images/moon.png" id="icon">
     </header>
     <section class="home" id="home">
@@ -276,16 +274,19 @@
     </section>
     <section class="contact" id="contact">
   <div class="container">
-    <div class="center">
-      <h3>Let's talk about everything</h3>
-      <p>Don't like forms? Send me an email.</p>
-    </div>
-    <div class="action">
-      <form>
-        <input type="email" name="email" placeholder="enter your email" required>
-        <input type="submit" name="submit" value="submit">
-      </form>
-    </div>
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <div class="center">
+        <h3>Let's talk about everything</h3>
+        <p>Don't like forms? Send me an email.</p>
+      </div>
+      <div class="action">
+        <input type="hidden" name="access_key" value="f084b626-7f2a-455d-9ef7-7e4755c2e6a5">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="text" name="subject" placeholder="Your message" required>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
   </div>
 </section>
 
@@ -293,7 +294,7 @@
     <div class="ends">
 		<p>Made with love by Baburagupathi © 2025</p>
 	</div>
-    <script type="text/javascript" src="Portfolio/index.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
     <script>
         var icon=document.getElementById("icon");
         icon.onclick=function(){
