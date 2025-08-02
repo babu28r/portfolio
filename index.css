@@ -491,40 +491,70 @@ header.sticky{
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
+/* Common Input Fields */
 .contact .action input[type="text"],
 .contact .action input[type="email"],
 .contact .action input[name="subject"] {
-  max-width: 100%;
-  width: 470px;
-  padding: 12px 15px;
-  background: var(--bg-color);   /* Define this in your root, or replace with a color like #fff */
-  color: var(--text-color);      /* Define this in your root, or replace with a color like #000 */
+  width: 100%;
+  max-width: 470px;
+  padding: 14px 18px;
+  background: var(--bg-color);   /* or use #fff */
+  color: var(--text-color);      /* or use #000 */
   border: none;
   outline: none;
   margin-bottom: 20px;
   border-radius: 30px;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
+/* Subject field slightly taller */
 .contact .action input[name="subject"] {
-  padding: 20px 15px;  /* Make subject input taller */
+  padding: 20px 18px;
 }
 
+/* Submit Button */
 .contact .action input[type="submit"] {
-  padding: 12px 40px;
-  background: var(--main-color);  /* Also define this or use a color like #6c63ff */
-  color: var(--bg-color);
+  background: var(--main-color);   /* or use #6c63ff */
+  color: var(--bg-color);          /* or use #fff */
   border: none;
   outline: none;
-  margin-top: 10px;
+  padding: 14px 30px;
   border-radius: 30px;
   cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+
+  /* Smaller width than inputs */
+  width: auto;
+  max-width: 200px;
+
+  /* Center horizontally */
+  align-self: center;
 }
 
+/* Responsive Layout */
+@media (max-width: 540px) {
+  .contact .action {
+    padding: 0 20px;
+  }
 
+  .contact .action input[type="text"],
+  .contact .action input[type="email"],
+  .contact .action input[name="subject"] {
+    width: 100%;
+    max-width: 100%; /* full width within padding */
+  }
 
+  .contact .action input[type="submit"] {
+    width: auto;       /* don't stretch */
+    max-width: 160px;  /* smaller size */
+    padding: 12px 50px;
+  }
+}
 .ends{
 	text-align: center;
 	padding: 40px;
@@ -655,36 +685,4 @@ header.sticky{
 		padding: 65px 3%;
 		transition: .3s;
 	}
-}
-@media (max-width: 540px){
-	.contact .action form input[type="email"] {
-		width: 310px;
-	}
-}
-@media (max-width: 600px) {
-  .contact .action form {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  .contact .action form input[type="text"],
-  .contact .action form input[type="email"],
-  .contact .action form input[name="subject"],
-  .contact .action form input[type="submit"] {
-    width: 100%;
-    margin: 10px 0;
-    box-sizing: border-box;
-  }
-
-  .contact .action form input[type="submit"] {
-    width: auto;
-    padding: 12px 30px;
-    margin: 20px auto;
-    display: block;
-  }
-
-  .contact .action {
-    width: 100%;
-  }
 }
