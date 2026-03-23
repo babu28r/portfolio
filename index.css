@@ -279,22 +279,29 @@ header.sticky{
 }
 .portfolio-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,auto));
-    grid-gap:1.8rem;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:1.8rem;
+    align-items: stretch;
     margin-top: 5rem;
     text-align: center;
     cursor: pointer;
 }
 .col{
     position: relative;
+    min-height: 350px;
+    aspect-ratio: 1 / 1;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
 }
 .col img{
-    max-width: 100%;
-    width: 380px;
-    height: 350px;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
 }
 .layer{
     /* background: linear-gradient(rgba(0,0,0,0.5)0%,#191919); */
@@ -304,49 +311,57 @@ header.sticky{
     top: 0;
     left: 0;
     border-radius: 12px;
-    
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.6));
+    transition: background 0.4s ease;
 }
 .layer:hover{
-    background: linear-gradient(rgba(0,0,0,0.5)0%,#191919);
-    transition:all .80s;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.75));
 }
-.layer h3{
+.layer h3,
+.layer h5,
+.layer p {
     position: absolute;
-    width: 100%;
+    left: 50%;
+    width: 90%;
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    text-align: center;
+    margin: 0;
+    pointer-events: none;
+}
+.layer h3 {
+    top: 30%;
     font-size: 25px;
-    font-weight: 500;
-    color: var(--main-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: ease 1.10s;
+    font-weight: 600;
+    color: #be23ff;
 }
-.layer:hover h3{
-    bottom: 62%;
+.layer h5 {
+    top: 42%;
+    font-size: 16px;
+    color: #ebebff;
+}
+.layer p {
+    top: 52%;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+.layer:hover h3,
+.layer:hover h5,
+.layer:hover p {
     opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
-.layer h5{
-    position: absolute;
-    width: 100%;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--second-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: ease 1.10s;
+.layer p {
+    max-height: 40%;
+    overflow: hidden;
 }
-.layer p{
-    position: absolute;
+.col img {
     width: 100%;
-    color: var(--second-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: ease 1.10s;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 .layer:hover p{
     /* position: absolute; */
@@ -395,13 +410,14 @@ header.sticky{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 320px;
-
+    min-height: 320px;
+    height: auto;
 }
 
 .row p{
     line-height: 1.6;
-    min-height: 120px;
+    min-height: 0;
+    flex: 1;
 }
 
 .s img{
@@ -441,6 +457,67 @@ header.sticky{
 .row:hover{
     will-change: transform;
     transform: perspective(1000px) rotateX(4.80deg) rotateY(10.23deg) scale3d(1.05,1.05,1.05);
+}
+.row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+    pointer-events: none;
+}
+.row:hover::before {
+    box-shadow: 0 0 0 2px rgba(149, 0, 255, 0.35), 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+.certification-content .row {
+    position: relative;
+    overflow: hidden;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1300;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    width: 760px;
+    max-width: calc(100% - 40px);
+}
+.modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 120px);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 900;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.20);
+    backdrop-filter: blur(3px);
+    transition: background 0.3s ease;
+}
+.close:hover {
+    background: rgba(255, 255, 255, 0.25);
 }
 .cta-box {
   display: grid;
