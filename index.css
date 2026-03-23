@@ -377,20 +377,33 @@ header.sticky{
 }
 .service-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
     grid-gap:1.2rem;
     align-items: center;
     margin-top: 5rem;
+    grid-auto-rows: 1fr;
 }
 .row{
     background: var(--hover);
     box-shadow: 18px 0px 87px 0px rgb(10 15 70 / 7%);
     border: 1px solid;
     border-radius: 12px;
-    padding: 45px 45px 45px 45px;
+    padding: 40px;
     transition: ease .45s;
     cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 320px;
+
 }
+
+.row p{
+    line-height: 1.6;
+    min-height: 120px;
+}
+
 .s img{
     height: 55px;
     width: 55px;
@@ -429,40 +442,51 @@ header.sticky{
     will-change: transform;
     transform: perspective(1000px) rotateX(4.80deg) rotateY(10.23deg) scale3d(1.05,1.05,1.05);
 }
-.cta-box{
-    display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(230px,auto));
-    grid-gap:2rem;
-    align-items: center;
-    margin-top: 5rem;
-    text-align: center;
-}
-.wrap{
-    background: #ffffff;
-    box-shadow: 18px 0px 87px 0px rgb(10 15 70 / 7%);
-    border-radius: 12px;
-    padding: 50px 50px 50px 50px;
-    transition: ease .40s;
-    cursor: pointer;
-}
-.one{
-    background: #baebcd;
+.cta-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, auto));
+  grid-gap: 2rem;
+  align-items: stretch;
+  margin-top: 5rem;
+  text-align: center;
 }
 
-.two{
-    background: #D9D1FA;
+.wrap {
+  background: #ffffff;
+  box-shadow: 18px 0px 87px 0px rgb(10 15 70 / 7%);
+  border-radius: 12px;
+  padding: 50px;
+  transition: ease 0.40s;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
-.three{
-    background: #faedce;
+
+.one {
+  background: #baebcd;
 }
-.wrap h3{
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 2px;
+
+.two {
+  background: #d9d1fa;
 }
-.wrap p{
-    font-size: var(--p-font);
+
+.three {
+  background: #faedce;
 }
+
+.wrap h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.wrap p {
+  font-size: var(--p-font, 16px);
+}
+
 .contact{
     background:#9500ff99;
     width: 64%;
